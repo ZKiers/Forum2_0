@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Topic extends Model
 {
@@ -23,6 +25,6 @@ class Topic extends Model
         return $this->hasMany(Reply::class);
     }
     public function thread(): BelongsTo {
-        return $this->belongsTo(Thread::Class);
+        return $this->belongsTo(Thread::class);
     }
 }
